@@ -5,3 +5,8 @@ export type Menuitem = {
     name: string,
     price: number
 }
+
+//Tipo para el dato de orden
+export type Orderitem = Menuitem & {    //Alberga lo mismo que Menuitem pero se añade quantity
+    quantity: number
+}
