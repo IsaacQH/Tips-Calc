@@ -28,11 +28,18 @@ export const useOrder = () => {
         setOrder(updatedOrder)
     }
 
+    const placeOrder = () => {
+        console.log("SENDING ORDER")
+        setOrder([])
+        setTip(0)
+    }
+
     return {
         order,
         tip,
         setTip,
         addItem,
-        removeItem
+        removeItem,
+        placeOrder
     }
 }
