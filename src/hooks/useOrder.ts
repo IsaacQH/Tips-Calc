@@ -7,6 +7,7 @@ import type { Menuitem, Orderitem } from "../types";
 export const useOrder = () => {
 
     const [order, setOrder] = useState<Orderitem[]>([]) //State que alvergará arreglo de objetos de la orden
+    const [tip, setTip] = useState<number>(0) //State que capturará la propina
 
     const addItem = (item: Menuitem) => {
 
@@ -29,6 +30,8 @@ export const useOrder = () => {
 
     return {
         order,
+        tip,
+        setTip,
         addItem,
         removeItem
     }
