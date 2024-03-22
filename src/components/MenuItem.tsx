@@ -1,5 +1,6 @@
 
 import type { Menuitem } from "../types"
+import { formatPrice } from "../helpers"
 
 type MenuitemProp = {
     item: Menuitem,
@@ -14,7 +15,7 @@ export default function MenuItem({item, addItem}:MenuitemProp) {
         onClick={() => addItem(item)}
     >
         <p>{item.name}</p>
-        <p className=" font-bold">${item.price}.00</p>
+        <p className="text-orange-800 font-bold">{formatPrice(item.price)}</p>
     </button>
 
     </>
