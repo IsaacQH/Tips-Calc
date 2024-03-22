@@ -2,6 +2,7 @@
 //Componentes
 import MenuItem from "./components/MenuItem"
 import { OrderContents } from "./components/OrderContents"
+import { OrderTotal } from "./components/OrderTotal"
 
 //Import data
 import { menuItems } from "./data/db"  //Datos que interpretará la app
@@ -40,6 +41,10 @@ function App() {
         <OrderContents
           order = {order}
           removeItem = {removeItem}
+        />
+
+        <OrderTotal
+          order = {order}
         />
       </div>
 
