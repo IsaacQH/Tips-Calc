@@ -20,10 +20,16 @@ export const useOrder = () => {
             setOrder([...order, newItem]) //Casteramos
         }
     }
-    console.log(order)
+
+    const removeItem = (id:Menuitem['id']) => {
+        console.log("DELETING " + id)
+        const updatedOrder = order.filter((orderItem) => orderItem.id !== id)
+        setOrder(updatedOrder)
+    }
 
     return {
         order,
-        addItem
+        addItem,
+        removeItem
     }
 }

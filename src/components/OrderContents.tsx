@@ -1,12 +1,13 @@
 
-import type { Orderitem } from "../types"
+import type { Menuitem, Orderitem } from "../types"
 import { formatPrice } from "../helpers"
 
 type OrderContentProp = {     //Se crea ek typo de los prop
     order: Orderitem[]      //es tipo orderitem pero en areglo
+    removeItem: (id: Menuitem['id']) => void
 }
 
-export const OrderContents = ({order}:OrderContentProp) => {
+export const OrderContents = ({order, removeItem}:OrderContentProp) => {
   return (
     <div>
         <h2 className="text-4xl font-black text-orange-800 text-center">Bill</h2>
@@ -28,6 +29,7 @@ export const OrderContents = ({order}:OrderContentProp) => {
                        <div className=" justify-end">
                         <button
                                 className=" bg-red-600 text-white rounded-full h-8 w-8 font-bold mt-2"
+                                onClick={() => removeItem(item.id)}
                             >
                                 X
                             </button>
